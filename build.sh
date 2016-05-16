@@ -5,8 +5,8 @@ for dir in *; do
         cd $dir
         for srcfile in *.s; do
             name=${srcfile%*.s}
-            as $srcfile -o "${name}.o"
-            ld "${name}.o" -o ${name}
+            as --32 $srcfile -o "${name}.o"
+            ld -m elf_i386 "${name}.o" -o ${name}
         done
         cd ..
     fi
