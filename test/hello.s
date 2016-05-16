@@ -1,10 +1,10 @@
-.data
+.section .data
     str:
         .ascii "Hello, World!\n"
 
-.text
+.section .text
 
-    .global _start
+    .globl _start
 
 _start:
     movl $4, %eax
