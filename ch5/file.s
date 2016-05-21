@@ -37,3 +37,7 @@ _start:
     movl $my_buffer, %ecx      # pass buffer
     movl -8(%ebp),   %edx      # pass size
     int  $0x80
+
+    ### Exit ###
+    movl $1,         %eax      # 'exit' syscall
+    movl $0,         %ebx      # 0 exit status
